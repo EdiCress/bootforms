@@ -60,9 +60,9 @@ class BasicFormBuilder
 		return $this->builder->submit($value)->addClass('btn')->addClass($type);
 	}
 
-	public function select($label, $name, $options = array())
+	public function select($label, $name, $options = array(), $iskey = false)
 	{
-		$control = $this->builder->select($name, $options);
+		$control = $this->builder->select($name, $options, $iskey);
 
 		return $this->formGroup($label, $name, $control);
 	}
@@ -143,6 +143,13 @@ class BasicFormBuilder
 	public function date($label, $name, $value = null)
 	{
 		$control = $this->builder->date($name)->value($value);
+
+		return $this->formGroup($label, $name, $control);
+	}
+
+	public function datetime($label, $name, $value = null)
+	{
+		$control = $this->builder->datetime($name)->value($value);
 
 		return $this->formGroup($label, $name, $control);
 	}

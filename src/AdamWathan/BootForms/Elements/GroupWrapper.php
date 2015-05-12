@@ -21,7 +21,7 @@ class GroupWrapper
 		$this->formGroup->helpBlock($text);
 		return $this;
 	}
-	
+
 	public function __toString()
 	{
 		return $this->render();
